@@ -10,7 +10,7 @@ int minRefuelStops(int target, int start_fuel, std::vector<std::vector<int>>& st
     int i = 0; // +4 байта
     int result = 0; // +4 байта
 
-    // начинаем ехать и едем, пока хватает топлива. O(N), N - число остановок, тк каждый раз запускаем цикл работает до следующей остановки
+    // начинаем ехать и едем, пока хватает топлива. O(N), N - число остановок, тк каждый раз цикл работает до следующей остановки
     while(curr_fuel < target) {
         // по пути добавляем в очередь станции, мимо которых проехали. O(M), M - колво станций, мимо которых проезжаем
         while(i < stations_count && curr_fuel >= stations[i][0]) {
@@ -19,7 +19,7 @@ int minRefuelStops(int target, int start_fuel, std::vector<std::vector<int>>& st
         }
         
         // если топливо кончилось, при этом даже не доехали до станции – то неудача
-        if(queue.empty()) {
+        if (queue.empty()) {
             return -1;
         }
         
