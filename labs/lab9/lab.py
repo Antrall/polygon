@@ -1,7 +1,7 @@
 import numpy as np
 
 # функция для нахождения суммы элементов главной диагонали
-def sum_diagonal(matrix: np.array) -> int | str:
+def sum_diagonal(matrix: np.array) -> int:
     # проверяем, квадратная ли матрица
     if matrix.shape[0] != matrix.shape[1]:
         raise ValueError("Ошибка: матрица должна быть квадратной.")
